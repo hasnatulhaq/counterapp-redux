@@ -12,7 +12,7 @@ export default  function counterReducer(state = initialState, action) {
       return {
         
         // and update the copy with the new value
-        keyvalue: state.keyvalue + 1
+       keyvalue: state.keyvalue + 1 
       }
     }
     // otherwise return the existing state unchanged

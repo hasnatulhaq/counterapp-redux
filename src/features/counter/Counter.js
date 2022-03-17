@@ -1,30 +1,23 @@
 import {useDispatch,useSelector} from 'react-redux'
-
+import {increment, decrement} from '../../app/reducerSlice'
 
 function Counter(){
     const dispatch = useDispatch();
-    const {keyvalue} = useSelector(state => state.custom);
-
-    const inc = () =>{
-          dispatch({
-            type : "increment",
-          })
-    }
-    
-    const dec = () =>{
-        dispatch({
-           type: "decrement",
-        })
-       }
+    const {value} = useSelector(state => state.counter);
 
     return(
         <>
-        <h2>{keyvalue}</h2>
-        <button onClick={inc}>+</button>
-        <button onClick={dec}>-</button>
+        <h2>{value}</h2>
+        <button onClick={() => dispatch(increment())}>+</button>
+        <button onClick={() => dispatch(decrement())}>-</button>
         </>
     )
 }
 
 
 export default Counter
+
+
+
+
+
